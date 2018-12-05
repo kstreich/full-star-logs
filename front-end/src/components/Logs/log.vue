@@ -1,6 +1,6 @@
 <template>
   <div class="log">
-    <h4>{{logData.title}}</h4>
+    <h4 @click="setActiveLog">{{logData.title}}</h4>
   </div>
 </template>
 
@@ -14,7 +14,11 @@
       }
     },
     computed: {},
-    methods: {}
+    methods: {
+      setActiveLog() {
+        this.$store.dispatch('setActiveLog', this.logData)
+      }
+    }
   }
 
 </script>

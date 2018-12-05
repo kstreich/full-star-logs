@@ -40,7 +40,6 @@ export default new Vuex.Store({
         .then(res => {
           commit('SETUSER', res.data)
         })
-      dispatch('getAllLogs')
         .catch(err => console.log("Cannot Login"))
 
     },
@@ -49,7 +48,6 @@ export default new Vuex.Store({
         .then(res => {
           commit('SETUSER', res.data)
         })
-      dispatch('getAllLogs')
         .catch(err => console.log("Cannot Register"))
     },
     authenticate({ commit, dispatch }) {
@@ -57,7 +55,6 @@ export default new Vuex.Store({
         .then(res => {
           commit('SETUSER', res.data)
         })
-      dispatch('getAllLogs')
         .catch(err => {
           router.push({ name: 'auth' })
         })
@@ -72,6 +69,7 @@ export default new Vuex.Store({
     },
     setActiveLog({ commit, dispatch }, log) {
       commit('setActiveLog', log)
+      router.push({ name: 'blog' })
     }
   }
 })

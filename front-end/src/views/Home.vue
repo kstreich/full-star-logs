@@ -12,6 +12,9 @@
 
   export default {
     name: 'home',
+    mounted() {
+      this.$store.dispatch('getAllLogs')
+    },
     components: {
       Logs
     }
